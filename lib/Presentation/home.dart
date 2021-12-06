@@ -100,10 +100,8 @@ class _HomeState extends State<Home> {
 
   Future<void> _getDay(@required double latitude, @required double longitude) async {
 
-   // DayRepository _dayRepo = RepositoryModule.dayRepository();
-    DayDataRepository? _ddr;
-    Day? __day;
-    __day = await _ddr?.getDay(latitude: latitude, longitude: longitude);
+    DayRepository _dayRepo = RepositoryModule.dayRepository();
+    Day __day = await _dayRepo.getDay(latitude: latitude, longitude: longitude);
     if (__day != null) _day = __day;
     _yaSchitalka++;
    _update.inputEventSink.add(Events.firstEvent);

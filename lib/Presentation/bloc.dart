@@ -13,6 +13,7 @@ class Update {
   Update(){
     _inController.stream.listen((event) {_outController.sink.add(event);});
 
+
   }
   void closeStream(){
     _inController.close();
